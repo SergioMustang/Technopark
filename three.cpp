@@ -7,7 +7,7 @@ int main() {
     scanf("%lli %lli %lli %lli %lli", &s, &l1, &r1, &l2, &r2);
     diap1 = r1 - l1;
     diap2 = r2 - l2;
-    if ((diap1 / diap2) < 1) {
+    if ((diap1 / diap2) <= 1) {
         for (long long tmp = l1; tmp <= r1; tmp++) {
             long long buffer = s - tmp;
             if (buffer <= r2 && buffer >= l2) {
