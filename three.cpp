@@ -3,12 +3,11 @@
 
 int main() {
     system("chcp 65001");
-    long long  s, l1, r1, l2, r2, x1, x2, diap1, diap2;
-    fprintf(stdout, "Введите s, l1, r1, l2, r2 =  \n");
+    long long s, l1, r1, l2, r2, x1, x2, diap1, diap2;
     scanf("%lli %lli %lli %lli %lli", &s, &l1, &r1, &l2, &r2);
     diap1 = r1 - l1;
     diap2 = r2 - l2;
-    if((diap1/diap2) < 1 ){
+    if ((diap1 / diap2) < 1) {
         for (long long tmp = l1; tmp <= r1; tmp++) {
             long long buffer = s - tmp;
             if (buffer <= r2 && buffer >= l2) {
@@ -22,8 +21,7 @@ int main() {
                 break;
             }
         }
-    }
-    else{
+    } else {
         for (long long tmp = l2; tmp <= r2; tmp++) {
             long long buffer = s - tmp;
             if (buffer <= r1 && buffer >= l1) {
@@ -38,7 +36,5 @@ int main() {
             }
         }
     }
-
-
     return 0;
 }
