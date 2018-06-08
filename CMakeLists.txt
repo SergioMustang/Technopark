@@ -3,5 +3,5 @@ project(Technopark1)
 
 set(CMAKE_C_STANDARD 99)
 
-set(SOURCE_FILES three.cpp)
+set(SOURCE_FILES  three.cpp)
 add_executable(Technopark1 ${SOURCE_FILES})
