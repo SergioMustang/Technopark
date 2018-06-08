@@ -3,23 +3,21 @@
 
 int main() {
     system("chcp 65001");
-    int buffer, M[100], numberOfnumbers, result;
+    long long numberOfnumbers, result;
+    long long *M;
     result = 0;
-    fprintf(stdout, "Введите количество чисел:\n");
-    scanf("%d", &numberOfnumbers);
-    fprintf(stdout, "Введите числа через пробел:\n");
+    scanf("%lli", &numberOfnumbers);
+    M = (long long*)malloc(numberOfnumbers * sizeof(long long));
     for (int tmp = 0; tmp < numberOfnumbers; tmp++) {
-        scanf("%d", &buffer);
-        M[tmp] = buffer;
+        scanf("%lli", &M[tmp]);
         result++;
         for (int tmp2 = 0; tmp2 < tmp; tmp2++) {
-
-            if(M[tmp2] == buffer){
+            if(M[tmp2] == M[tmp]){
                 result--;
                 break;
             }
         }
     }
-    fprintf(stdout, "result = %d",result);
+    fprintf(stdout, "%lli ",result);
     return 0;
 }
