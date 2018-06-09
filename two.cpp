@@ -13,7 +13,9 @@ int main() {
         result++;
         for (int tmp2 = 0; tmp2 < tmp; tmp2++) {
             if(M[tmp2] == M[tmp]){
+                tmp--;
                 result--;
+                numberOfnumbers--;
                 break;
             }
         }
