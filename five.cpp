@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <malloc.h>
+
 
 void Output(int n, int mass[]) {
     if (n > 5) {
@@ -29,15 +29,16 @@ int main() {
     massN = 0;
     scanf("%d", &N);
     int mass[6];
-    for (int tmp = 0; tmp <= 4; tmp++) {
+    for (int tmp = 0; tmp < N; tmp++) {
+        if (tmp >= 5) {
+            massN = 6;
+            scanf("%d", &mass[5]);
+            InsertionSort(massN, mass);
+            Output(massN, mass);
+            continue;
+        }
         scanf("%d", &mass[tmp]);
         massN++;
-        InsertionSort(massN, mass);
-        Output(massN, mass);
-    }
-    massN = 6;
-    for (int tmp = 5; tmp < N; tmp++) {
-        scanf("%d", &mass[5]);
         InsertionSort(massN, mass);
         Output(massN, mass);
     }
