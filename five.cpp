@@ -28,11 +28,16 @@ int main() {
     int N, massN;
     massN = 0;
     scanf("%d", &N);
-    int *mass;
-    mass = (int *) malloc(N * sizeof(int));
-    for (int tmp = 0; tmp < N; tmp++) {
+    int mass[6];
+    for (int tmp = 0; tmp <= 4; tmp++) {
         scanf("%d", &mass[tmp]);
         massN++;
+        InsertionSort(massN, mass);
+        Output(massN, mass);
+    }
+    massN = 6;
+    for (int tmp = 5; tmp < N; tmp++) {
+        scanf("%d", &mass[5]);
         InsertionSort(massN, mass);
         Output(massN, mass);
     }
