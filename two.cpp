@@ -1,25 +1,22 @@
 #include <stdlib.h>
 #include <cstdio>
+#include <unordered_set>
+
 
 int main() {
     system("chcp 65001");
     long long numberOfnumbers, result;
-    long long *M;
     result = 0;
     scanf("%lli", &numberOfnumbers);
-    M = (long long*)malloc(numberOfnumbers * sizeof(long long));
-    for (int tmp = 0; tmp < numberOfnumbers; tmp++) {
-        scanf("%lli", &M[tmp]);
-        result++;
-        for (int tmp2 = 0; tmp2 < tmp; tmp2++) {
-            if(M[tmp2] == M[tmp]){
-                tmp--;
-                result--;
-                numberOfnumbers--;
-                break;
-            }
+    std::unordered_set<long long> set;
+    for (int i = 0; i < numberOfnumbers; i++) {
+        long long tmp = 0;
+        scanf("%lli", &tmp);
+        if (set.find(tmp) == set.end()) {
+            result++;
+            set.insert(tmp);
         }
     }
-    fprintf(stdout, "%lli ",result);
+    fprintf(stdout, "%lli ", result);
     return 0;
 }
